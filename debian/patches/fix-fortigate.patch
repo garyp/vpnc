@@ -1,0 +1,22 @@
+From: Gary Peck <gary@realify.com>
+Date: Tue, 23 Aug 2016 17:59:08 -0700
+Subject: Fix IKE_ATTRIB_LIFE_DURATION assertion error when connecting to
+ FortiGate appliances
+
+---
+ vpnc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/vpnc.c b/vpnc.c
+index a0c211b..e785c23 100644
+--- a/vpnc.c
++++ b/vpnc.c
+@@ -1203,7 +1203,7 @@ static void lifetime_ike_process(struct sa_block *s, struct isakmp_attribute *a)
+ 	assert(a->af == isakmp_attr_16);
+ 	assert(a->u.attr_16 == IKE_LIFE_TYPE_SECONDS || a->u.attr_16 == IKE_LIFE_TYPE_K);
+ 	assert(a->next != NULL);
+-	assert(a->next->type == IKE_ATTRIB_LIFE_DURATION);
++	//assert(a->next->type == IKE_ATTRIB_LIFE_DURATION);
+ 
+ 	if (a->next->af == isakmp_attr_16)
+ 		value = a->next->u.attr_16;

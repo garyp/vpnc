@@ -1,3 +1,10 @@
+vpnc (0.5.3r550-2gp1) UNRELEASED; urgency=medium
+
+  * Fix IKE_ATTRIB_LIFE_DURATION assertion error when connecting to FortiGate
+    appliances.
+
+ -- Gary Peck <gary@realify.com>  Thu, 10 Mar 2016 22:20:45 -0800
+
 vpnc (0.5.3r550-2) unstable; urgency=medium
 
   * Enable PIE and BINDNOW hardening as suggested by Markus
